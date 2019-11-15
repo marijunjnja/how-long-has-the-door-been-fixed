@@ -26,6 +26,14 @@ const App = props => {
     font-size: 1em;
   `
 
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      window.location.reload(false)
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <Wrapper>
       <Title>When was the door fixed</Title>
